@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MyManga</title>
+<title>MyManga - Türkçe Manga ve Webtoon Oku</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
 
 body{
-    background:#171717;
-    color:#999;
     font-family:Arial,Helvetica,sans-serif;
-    font-size:13px;
+    background:#fff;
+    color:#333;
+    font-size:14px;
 }
 
 a{
@@ -22,1030 +26,857 @@ a{
 
 .container{
     width:1170px;
-    max-width:92%;
+    max-width:calc(100% - 40px);
     margin:auto;
 }
 
 /* ================= HEADER ================= */
 
-.header{
-    height:78px;
-    background:#202020;
-    border-bottom:1px solid #303030;
+header{
+    background:#fff;
+    border-bottom:1px solid #eee;
+    padding:24px 0;
 }
 
-.header-inner{
-    height:100%;
+.header{
     display:flex;
     align-items:center;
+    justify-content:space-between;
+    gap:30px;
 }
 
 .logo{
-    font-size:29px;
-    font-weight:700;
-    color:#fff;
+    font-size:30px;
+    font-weight:800;
+    letter-spacing:-1px;
+    color:#222;
     white-space:nowrap;
-    margin-right:55px;
 }
 
 .logo span{
-    color:#eb3349;
+    color:#e91e63;
 }
 
-.menu{
-    display:flex;
-    align-items:center;
-    gap:27px;
+.search{
     flex:1;
+    max-width:470px;
+    position:relative;
 }
 
-.menu a{
-    color:#ccc;
-    font-size:12px;
-    font-weight:bold;
-    text-transform:uppercase;
+.search input{
+    width:100%;
+    height:42px;
+    border:1px solid #ddd;
+    padding:0 48px 0 16px;
+    outline:none;
+    font-size:13px;
 }
 
-.menu a:hover{
-    color:#eb3349;
-}
-
-.header-right{
-    display:flex;
-    align-items:center;
-    gap:18px;
-}
-
-.search-icon{
-    color:#bbb;
-    font-size:21px;
+.search button{
+    position:absolute;
+    right:0;
+    top:0;
+    width:45px;
+    height:42px;
+    border:0;
+    background:#e91e63;
+    color:white;
     cursor:pointer;
 }
 
-.sign{
-    font-size:11px;
-    color:#ccc;
-    text-transform:uppercase;
-}
-
-/* ================= CATEGORY BAR ================= */
-
-.category{
-    background:#111;
-    border-bottom:1px solid #292929;
-}
-
-.category-inner{
-    height:43px;
+.header-links{
     display:flex;
+    gap:18px;
     align-items:center;
-    gap:26px;
-    overflow:hidden;
-}
-
-.category a{
-    color:#999;
-    font-size:10px;
-    text-transform:uppercase;
     white-space:nowrap;
+    font-size:13px;
 }
 
-.category a:hover{
-    color:#eb3349;
+.header-links a:hover{
+    color:#e91e63;
 }
 
-/* ================= HERO ================= */
+/* ================= NOTICE ================= */
 
-.hero{
-    height:350px;
-    margin-top:30px;
-    position:relative;
-    overflow:hidden;
-    background:#222;
+.notice{
+    margin-top:35px;
+    padding:25px 28px;
+    background:#fafafa;
+    border-left:4px solid #e91e63;
 }
 
-.hero-background{
-    position:absolute;
-    inset:0;
-    background:
-    linear-gradient(90deg,#090909 0%,rgba(9,9,9,.94) 25%,rgba(9,9,9,.55) 70%,rgba(9,9,9,.15)),
-    linear-gradient(135deg,#72263a,#161616 75%);
-}
-
-.hero-content{
-    position:relative;
-    height:100%;
-    display:flex;
-    align-items:center;
-}
-
-.hero-cover{
-    width:230px;
-    height:310px;
-    margin-left:35px;
-    flex-shrink:0;
-    background:
-    linear-gradient(145deg,#8d2942,#181818);
-    position:relative;
-}
-
-.hero-cover:after{
-    content:"SHUT LINE";
-    position:absolute;
-    left:20px;
-    bottom:20px;
-    color:white;
-    font-size:25px;
-    font-weight:bold;
-}
-
-.hero-info{
-    padding-left:40px;
-    max-width:650px;
-}
-
-.hero-label{
-    color:#eb3349;
-    text-transform:uppercase;
-    font-size:10px;
-    font-weight:bold;
+.notice h4{
+    font-size:13px;
     margin-bottom:12px;
-}
-
-.hero-title{
-    color:#fff;
-    font-size:40px;
-    margin-bottom:13px;
-}
-
-.hero-meta{
-    color:#aaa;
-    font-size:11px;
-    margin-bottom:18px;
-}
-
-.hero-description{
-    color:#aaa;
-    line-height:1.8;
-    font-size:12px;
-    margin-bottom:23px;
-}
-
-.read-btn{
-    background:#eb3349;
-    color:#fff;
-    padding:12px 22px;
     text-transform:uppercase;
-    font-size:10px;
-    font-weight:bold;
 }
 
-.read-btn:hover{
-    background:#fff;
-    color:#222;
+.notice p{
+    line-height:1.7;
+    color:#666;
 }
 
 /* ================= TITLES ================= */
 
-.section{
-    margin-top:42px;
-}
-
 .section-title{
-    border-bottom:1px solid #333;
-    height:38px;
-    margin-bottom:25px;
+    margin:45px 0 25px;
+    font-size:22px;
+    font-weight:700;
+    text-transform:uppercase;
+    position:relative;
+    padding-bottom:12px;
 }
 
-.section-title h2{
-    display:inline-block;
-    color:#eee;
-    font-size:18px;
-    text-transform:uppercase;
-    padding-bottom:12px;
-    border-bottom:2px solid #eb3349;
+.section-title:after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:45px;
+    height:3px;
+    background:#e91e63;
 }
 
 /* ================= POPULAR ================= */
 
 .popular{
     display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:20px;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
 }
 
 .popular-card{
-    min-width:0;
+    border-bottom:1px solid #eee;
+    padding-bottom:20px;
 }
 
-.popular-cover{
-    height:250px;
-    position:relative;
+.cover{
+    height:245px;
+    background:linear-gradient(135deg,#222,#666);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:16px;
     overflow:hidden;
 }
 
-.popular-cover.one{
-    background:linear-gradient(145deg,#77243b,#171717);
+.cover img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
-.popular-cover.two{
-    background:linear-gradient(145deg,#253f55,#171717);
+.popular-card h3{
+    font-size:16px;
+    margin-bottom:8px;
 }
 
-.popular-cover.three{
-    background:linear-gradient(145deg,#795437,#171717);
+.popular-card h3:hover{
+    color:#e91e63;
 }
 
-.popular-cover.four{
-    background:linear-gradient(145deg,#61778c,#171717);
+.date{
+    color:#999;
+    font-size:12px;
+    margin-bottom:10px;
 }
 
-.popular-cover.five{
-    background:linear-gradient(145deg,#6b3856,#171717);
+.chapters{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
 }
 
-.cover-name{
-    position:absolute;
-    left:14px;
-    bottom:14px;
-    color:#fff;
-    font-size:15px;
-    font-weight:bold;
-}
-
-.popular-title{
-    color:#ddd;
-    font-size:13px;
-    margin-top:11px;
-}
-
-.popular-date{
+.chapter{
+    font-size:11px;
     color:#666;
-    font-size:10px;
-    margin-top:7px;
+    border:1px solid #ddd;
+    padding:5px 8px;
+}
+
+.chapter:hover{
+    color:#fff;
+    background:#e91e63;
+    border-color:#e91e63;
+}
+
+/* ================= LATEST ================= */
+
+.latest{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0 45px;
+}
+
+.manga-item{
+    display:flex;
+    gap:18px;
+    padding:22px 0;
+    border-bottom:1px solid #eee;
+    min-height:155px;
+}
+
+.manga-cover{
+    width:90px;
+    min-width:90px;
+    height:125px;
+    background:linear-gradient(135deg,#333,#888);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    text-align:center;
+    font-size:12px;
+    font-weight:bold;
+    overflow:hidden;
+}
+
+.manga-cover img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.manga-info{
+    flex:1;
+}
+
+.manga-info h3{
+    font-size:16px;
+    margin-bottom:8px;
+    line-height:1.35;
+}
+
+.manga-info h3:hover{
+    color:#e91e63;
+}
+
+.rating{
+    display:inline-block;
+    color:#e91e63;
+    font-weight:bold;
+    font-size:13px;
+    margin-bottom:12px;
 }
 
 .chapter-row{
     display:flex;
-    gap:5px;
-    margin-top:8px;
+    justify-content:space-between;
+    gap:10px;
+    padding:7px 0;
+    border-top:1px solid #f1f1f1;
+    font-size:12px;
 }
 
 .chapter-row a{
-    background:#292929;
-    color:#bbb;
-    padding:6px 7px;
-    font-size:9px;
-}
-
-/* ================= MAIN ================= */
-
-.main{
-    display:grid;
-    grid-template-columns:minmax(0,1fr) 270px;
-    gap:35px;
-}
-
-/* ================= MANGA RELEASE ================= */
-
-.manga-item{
-    display:flex;
-    min-height:160px;
-    border-bottom:1px solid #303030;
-    padding-bottom:20px;
-    margin-bottom:20px;
-}
-
-.manga-cover{
-    width:115px;
-    height:155px;
-    flex-shrink:0;
-    position:relative;
-}
-
-.manga-cover.one{
-    background:linear-gradient(145deg,#77243b,#181818);
-}
-
-.manga-cover.two{
-    background:linear-gradient(145deg,#263e54,#181818);
-}
-
-.manga-cover.three{
-    background:linear-gradient(145deg,#765038,#181818);
-}
-
-.manga-cover.four{
-    background:linear-gradient(145deg,#61758a,#181818);
-}
-
-.manga-cover.five{
-    background:linear-gradient(145deg,#683853,#181818);
-}
-
-.manga-cover.six{
-    background:linear-gradient(145deg,#493d68,#181818);
-}
-
-.badge{
-    position:absolute;
-    top:8px;
-    left:8px;
-    background:#eb3349;
-    color:#fff;
-    font-size:8px;
-    padding:5px 7px;
-    text-transform:uppercase;
-    font-weight:bold;
-}
-
-.badge.hot{
-    background:#f39c12;
-}
-
-.badge.adult{
-    background:#8e44ad;
-}
-
-.manga-info{
-    padding-left:20px;
-    flex:1;
-}
-
-.manga-name{
-    color:#eee;
-    font-size:15px;
-    font-weight:bold;
-    margin-bottom:8px;
-}
-
-.author{
-    color:#777;
-    font-size:10px;
-    margin-bottom:10px;
-}
-
-.rating{
-    color:#f2b01e;
-    font-size:12px;
-    margin-bottom:12px;
-}
-
-.rating-number{
-    color:#aaa;
-    margin-left:5px;
-}
-
-.chapter-line{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    border-bottom:1px solid #292929;
-    padding:7px 0;
-    max-width:430px;
-}
-
-.chapter-line a{
-    color:#bbb;
-    font-size:10px;
-}
-
-.chapter-line a:hover{
-    color:#eb3349;
-}
-
-.volume{
-    color:#666;
-    font-size:9px;
-    margin-left:7px;
-}
-
-.date{
-    color:#666;
-    font-size:9px;
-}
-
-.load-more{
-    display:block;
-    text-align:center;
-    border:1px solid #3a3a3a;
-    padding:11px;
-    color:#aaa;
-    text-transform:uppercase;
-    font-size:10px;
-    margin-top:25px;
-}
-
-.load-more:hover{
-    background:#eb3349;
-    border-color:#eb3349;
-    color:white;
-}
-
-/* ================= SIDEBAR ================= */
-
-.sidebar-box{
-    border:1px solid #303030;
-}
-
-.sidebar-title{
-    background:#222;
-    border-bottom:2px solid #eb3349;
-    color:#eee;
-    font-size:14px;
-    font-weight:bold;
-    text-transform:uppercase;
-    padding:14px 15px;
-}
-
-.genres li{
-    list-style:none;
-    border-bottom:1px solid #292929;
-}
-
-.genres a{
-    display:flex;
-    justify-content:space-between;
-    padding:9px 14px;
-    color:#888;
-    font-size:11px;
-}
-
-.genres a:hover{
-    color:#eb3349;
-}
-
-.genre-count{
     color:#555;
+}
+
+.chapter-row a:hover{
+    color:#e91e63;
+}
+
+.chapter-date{
+    color:#aaa;
+    white-space:nowrap;
+}
+
+/* ================= COMPLETED ================= */
+
+.completed{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:0 50px;
+}
+
+.completed-item{
+    padding:18px 0;
+    border-bottom:1px solid #eee;
+}
+
+.completed-item h3{
+    font-size:15px;
+    margin-bottom:9px;
+}
+
+.completed-item h3:hover{
+    color:#e91e63;
+}
+
+/* ================= SHORT ================= */
+
+.short-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0 50px;
+}
+
+.short-item{
+    padding:18px 0;
+    border-bottom:1px solid #eee;
+}
+
+.short-item h3{
+    font-size:15px;
+    margin-bottom:9px;
+}
+
+.short-item a:hover{
+    color:#e91e63;
 }
 
 /* ================= FOOTER ================= */
 
-.footer{
+footer{
     margin-top:60px;
-    background:#111;
-    border-top:1px solid #292929;
-    padding:40px 0;
+    background:#222;
+    color:#aaa;
+    padding:35px 0;
 }
 
-.footer-inner{
+.footer{
     display:flex;
     justify-content:space-between;
     align-items:center;
 }
 
 .footer-logo{
-    color:#fff;
-    font-size:24px;
+    font-size:23px;
     font-weight:bold;
+    color:#fff;
 }
 
 .footer-logo span{
-    color:#eb3349;
+    color:#e91e63;
 }
 
-.footer-text{
-    color:#666;
-    font-size:10px;
+.footer p{
+    font-size:12px;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= MOBILE ================= */
 
 @media(max-width:900px){
 
-    .menu{
-        display:none;
+    .header{
+        flex-wrap:wrap;
     }
 
-    .logo{
-        margin-right:auto;
-    }
-
-    .popular{
-        grid-template-columns:repeat(3,1fr);
-    }
-
-    .main{
-        grid-template-columns:1fr;
-    }
-}
-
-@media(max-width:600px){
-
-    .hero{
-        height:430px;
-    }
-
-    .hero-cover{
-        position:absolute;
-        inset:0;
-        width:100%;
-        height:100%;
-        margin:0;
-        opacity:.35;
-    }
-
-    .hero-info{
-        position:relative;
-        padding:30px;
-    }
-
-    .hero-title{
-        font-size:32px;
+    .search{
+        order:3;
+        flex-basis:100%;
+        max-width:none;
     }
 
     .popular{
         grid-template-columns:repeat(2,1fr);
+    }
+
+    .latest{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .container{
+        max-width:calc(100% - 25px);
+    }
+
+    .header-links{
+        display:none;
+    }
+
+    .logo{
+        font-size:25px;
+    }
+
+    .popular{
+        grid-template-columns:1fr 1fr;
         gap:15px;
     }
 
-    .popular-cover{
-        height:220px;
+    .cover{
+        height:210px;
     }
 
-    .manga-cover{
-        width:90px;
-        height:125px;
+    .completed,
+    .short-list{
+        grid-template-columns:1fr;
     }
 
-    .manga-item{
-        min-height:125px;
-    }
-
-    .manga-info{
-        padding-left:13px;
-    }
-
-    .chapter-line{
-        max-width:none;
-    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
+<header>
+<div class="container header">
 
-<header class="header">
-<div class="container header-inner">
+    <a class="logo" href="/">
+        My<span>Manga</span>
+    </a>
 
-    <div class="logo">
-        MY<span>MANGA</span>
+    <div class="search">
+        <input type="text" placeholder="Arama...">
+        <button onclick="searchManga()">⌕</button>
     </div>
 
-    <nav class="menu">
-        <a href="#">Home</a>
-        <a href="#">Manga</a>
-        <a href="#">Novel</a>
-        <a href="#">Blog</a>
-        <a href="#">About Us</a>
-        <a href="#">Shop</a>
-    </nav>
-
-    <div class="header-right">
-        <div class="search-icon">⌕</div>
-        <a href="#" class="sign">Sign In</a>
+    <div class="header-links">
+        <a href="#">Gelişmiş</a>
+        <a href="#">Üye Girişi</a>
+        <a href="#">Üye Kaydı</a>
     </div>
 
 </div>
 </header>
 
 
-<!-- CATEGORY -->
-
-<div class="category">
-<div class="container category-inner">
-
-    <a href="#">Romance</a>
-    <a href="#">Comedy</a>
-    <a href="#">Shoujo</a>
-    <a href="#">Drama</a>
-    <a href="#">School Life</a>
-    <a href="#">Action</a>
-    <a href="#">Fantasy</a>
-    <a href="#">Yaoi</a>
-    <a href="#">More</a>
-
-</div>
-</div>
-
-
 <main class="container">
 
-<!-- HERO -->
+<!-- DUYURU -->
 
-<section class="hero">
+<section class="notice">
 
-    <div class="hero-background"></div>
+    <h4>Önemli Duyuru</h4>
 
-    <div class="hero-content">
-
-        <div class="hero-cover"></div>
-
-        <div class="hero-info">
-
-            <div class="hero-label">
-                Featured Manga
-            </div>
-
-            <h1 class="hero-title">
-                Shut Line
-            </h1>
-
-            <div class="hero-meta">
-                Drama &nbsp; • &nbsp;
-                Romance &nbsp; • &nbsp;
-                Yaoi
-            </div>
-
-            <p class="hero-description">
-                Discover the latest manga and webtoon releases.
-                Follow your favorite series and read new chapters
-                as soon as they are released.
-            </p>
-
-            <a href="#" class="read-btn">
-                Read Now
-            </a>
-
-        </div>
-
-    </div>
+    <p>
+        Merhaba değerli okuyucularımız! MyManga resmi sitemizdir.
+        Güncel manga ve webtoon bölümlerimizi buradan takip edebilirsiniz.
+    </p>
 
 </section>
 
 
-<!-- POPULAR SERIES -->
+<!-- POPÜLER -->
 
-<section class="section">
+<h2 class="section-title">Popüler</h2>
 
-<div class="section-title">
-    <h2>Popular Series</h2>
-</div>
+<section class="popular">
 
-<div class="popular">
+    <article class="popular-card">
 
-    <div class="popular-card">
-        <div class="popular-cover one">
-            <div class="cover-name">JINX</div>
-        </div>
-        <div class="popular-title">Jinx</div>
-        <div class="popular-date">Today</div>
-        <div class="chapter-row">
-            <a href="#">Chapter 84</a>
-            <a href="#">Chapter 83</a>
-        </div>
-    </div>
+        <div class="cover">JINX</div>
 
-    <div class="popular-card">
-        <div class="popular-cover two">
-            <div class="cover-name">SHUT LINE</div>
-        </div>
-        <div class="popular-title">Shut Line</div>
-        <div class="popular-date">Today</div>
-        <div class="chapter-row">
-            <a href="#">Chapter 94</a>
-            <a href="#">Chapter 93</a>
-        </div>
-    </div>
+        <h3>
+            <a href="#">Jinx</a>
+        </h3>
 
-    <div class="popular-card">
-        <div class="popular-cover three">
-            <div class="cover-name">PAINTER</div>
-        </div>
-        <div class="popular-title">Painter of the Night</div>
-        <div class="popular-date">Yesterday</div>
-        <div class="chapter-row">
-            <a href="#">Chapter 129</a>
-            <a href="#">Chapter 128</a>
-        </div>
-    </div>
+        <div class="date">Haziran 12, 2026</div>
 
-    <div class="popular-card">
-        <div class="popular-cover four">
-            <div class="cover-name">SEMANTIC</div>
+        <div class="chapters">
+            <a class="chapter" href="#">Bölüm 102.5</a>
+            <a class="chapter" href="#">Bölüm 102</a>
         </div>
-        <div class="popular-title">Semantic Error</div>
-        <div class="popular-date">2 days ago</div>
-        <div class="chapter-row">
-            <a href="#">Chapter 88</a>
-            <a href="#">Chapter 87</a>
-        </div>
-    </div>
 
-    <div class="popular-card">
-        <div class="popular-cover five">
-            <div class="cover-name">LOVE</div>
-        </div>
-        <div class="popular-title">Love History</div>
-        <div class="popular-date">3 days ago</div>
-        <div class="chapter-row">
-            <a href="#">Chapter 61</a>
-            <a href="#">Chapter 60</a>
-        </div>
-    </div>
+    </article>
 
-</div>
+
+    <article class="popular-card">
+
+        <div class="cover">SHUT LINE</div>
+
+        <h3>
+            <a href="#">Shut Line</a>
+        </h3>
+
+        <div class="date">Ağustos 24, 2026</div>
+
+        <div class="chapters">
+            <a class="chapter" href="#">Bölüm 114</a>
+            <a class="chapter" href="#">Bölüm 113</a>
+        </div>
+
+    </article>
+
+
+    <article class="popular-card">
+
+        <div class="cover">CODENAME ANASTASIA</div>
+
+        <h3>
+            <a href="#">Codename Anastasia</a>
+        </h3>
+
+        <div class="date">Ağustos 20, 2026</div>
+
+        <div class="chapters">
+            <a class="chapter" href="#">Bölüm 72</a>
+            <a class="chapter" href="#">Bölüm 71</a>
+        </div>
+
+    </article>
+
+
+    <article class="popular-card">
+
+        <div class="cover">PAINTER</div>
+
+        <h3>
+            <a href="#">Painter of the Night</a>
+        </h3>
+
+        <div class="date">Temmuz 2, 2026</div>
+
+        <div class="chapters">
+            <a class="chapter" href="#">Bölüm 132</a>
+            <a class="chapter" href="#">Bölüm 131</a>
+        </div>
+
+    </article>
 
 </section>
 
 
-<!-- LATEST -->
+<!-- YENİ BÖLÜMLER -->
 
-<section class="section">
+<h2 class="section-title">Yeni Bölümler</h2>
 
-<div class="main">
+<section class="latest">
 
-<div>
+    <article class="manga-item">
+        <div class="manga-cover">DESIRE<br>ME</div>
+        <div class="manga-info">
+            <h3><a href="#">Desire Me If You Can</a></h3>
+            <span class="rating">★ 4.3</span>
 
-<div class="section-title">
-    <h2>Latest Manga Releases</h2>
-</div>
+            <div class="chapter-row">
+                <a href="#">Bölüm 23</a>
+                <span class="chapter-date">Ağustos 28, 2026</span>
+            </div>
 
-
-<!-- MANGA 1 -->
-
-<div class="manga-item">
-
-    <div class="manga-cover one">
-        <span class="badge">New</span>
-    </div>
-
-    <div class="manga-info">
-
-        <div class="manga-name">
-            Jinx
+            <div class="chapter-row">
+                <a href="#">Bölüm 22</a>
+                <span class="chapter-date">Ağustos 17, 2026</span>
+            </div>
         </div>
+    </article>
 
-        <div class="author">
-            Mingwa
+
+    <article class="manga-item">
+        <div class="manga-cover">PASSION</div>
+        <div class="manga-info">
+            <h3><a href="#">Passion</a></h3>
+            <span class="rating">★ 4.3</span>
+
+            <div class="chapter-row">
+                <a href="#">Bölüm 139</a>
+                <span class="chapter-date">Ağustos 28, 2026</span>
+            </div>
+
+            <div class="chapter-row">
+                <a href="#">Bölüm 138</a>
+                <span class="chapter-date">Ağustos 28, 2026</span>
+            </div>
         </div>
+    </article>
 
-        <div class="rating">
-            ★★★★★
-            <span class="rating-number">4.8</span>
+
+    <article class="manga-item">
+        <div class="manga-cover">THINGS</div>
+        <div class="manga-info">
+            <h3><a href="#">Things That Deserve to Die</a></h3>
+            <span class="rating">★ 4.2</span>
+
+            <div class="chapter-row">
+                <a href="#">Bölüm 37</a>
+                <span class="chapter-date">Ağustos 28, 2026</span>
+            </div>
+
+            <div class="chapter-row">
+                <a href="#">Bölüm 36</a>
+                <span class="chapter-date">Ağustos 19, 2026</span>
+            </div>
         </div>
+    </article>
 
-        <div class="chapter-line">
-            <a href="#">Chapter 84</a>
-            <span class="volume">Vol. 4</span>
-            <span class="date">Today</span>
+
+    <article class="manga-item">
+        <div class="manga-cover">FLASHLIGHT</div>
+        <div class="manga-info">
+            <h3><a href="#">Flashlight</a></h3>
+            <span class="rating">★ 4.7</span>
+
+            <div class="chapter-row">
+                <a href="#">63. Bölüm</a>
+                <span class="chapter-date">Ağustos 25, 2026</span>
+            </div>
+
+            <div class="chapter-row">
+                <a href="#">62. Bölüm</a>
+                <span class="chapter-date">Ağustos 25, 2026</span>
+            </div>
         </div>
+    </article>
 
-        <div class="chapter-line">
-            <a href="#">Chapter 83</a>
-            <span class="volume">Vol. 4</span>
-            <span class="date">3 days ago</span>
+
+    <article class="manga-item">
+        <div class="manga-cover">YOU ARE<br>MY WORLD</div>
+        <div class="manga-info">
+            <h3><a href="#">You Are My World</a></h3>
+            <span class="rating">★ 4.3</span>
+
+            <div class="chapter-row">
+                <a href="#">33. Bölüm</a>
+                <span class="chapter-date">Ağustos 24, 2026</span>
+            </div>
+
+            <div class="chapter-row">
+                <a href="#">32. Bölüm</a>
+                <span class="chapter-date">Ağustos 13, 2026</span>
+            </div>
         </div>
-
-    </div>
-
-</div>
+    </article>
 
 
-<!-- MANGA 2 -->
+    <article class="manga-item">
+        <div class="manga-cover">SHUT<br>LINE</div>
+        <div class="manga-info">
+            <h3><a href="#">Shut Line</a></h3>
+            <span class="rating">★ 4.4</span>
 
-<div class="manga-item">
+            <div class="chapter-row">
+                <a href="#">Bölüm 114</a>
+                <span class="chapter-date">Ağustos 24, 2026</span>
+            </div>
 
-    <div class="manga-cover two">
-        <span class="badge hot">Hot</span>
-    </div>
-
-    <div class="manga-info">
-
-        <div class="manga-name">
-            Shut Line
+            <div class="chapter-row">
+                <a href="#">Bölüm 113</a>
+                <span class="chapter-date">Ağustos 13, 2026</span>
+            </div>
         </div>
+    </article>
 
-        <div class="author">
-            Kyou
+
+    <article class="manga-item">
+        <div class="manga-cover">AFTER<br>A MEAL</div>
+        <div class="manga-info">
+            <h3><a href="#">After a Meal</a></h3>
+            <span class="rating">★ 4.5</span>
+
+            <div class="chapter-row">
+                <a href="#">Bölüm 28</a>
+                <span class="chapter-date">Ağustos 21, 2026</span>
+            </div>
+
+            <div class="chapter-row">
+                <a href="#">Bölüm 27</a>
+                <span class="chapter-date">Ağustos 11, 2026</span>
+            </div>
         </div>
+    </article>
 
-        <div class="rating">
-            ★★★★★
-            <span class="rating-number">4.7</span>
+
+    <article class="manga-item">
+        <div class="manga-cover">CODENAME<br>ANASTASIA</div>
+        <div class="manga-info">
+            <h3><a href="#">Codename Anastasia</a></h3>
+            <span class="rating">★ 4.2</span>
+
+            <div class="chapter-row">
+                <a href="#">Bölüm 72</a>
+                <span class="chapter-date">Ağustos 20, 2026</span>
+            </div>
+
+            <div class="chapter-row">
+                <a href="#">Bölüm 71</a>
+                <span class="chapter-date">Ağustos 10, 2026</span>
+            </div>
         </div>
+    </article>
 
-        <div class="chapter-line">
-            <a href="#">Chapter 94</a>
-            <span class="volume">Vol. 5</span>
-            <span class="date">Today</span>
+
+    <article class="manga-item">
+        <div class="manga-cover">HAPPY<br>TWOGETHER</div>
+        <div class="manga-info">
+            <h3><a href="#">Happy Twogether</a></h3>
+            <span class="rating">★ 4.3</span>
+
+            <div class="chapter-row">
+                <a href="#">Bölüm 34</a>
+                <span class="chapter-date">Ağustos 19, 2026</span>
+            </div>
+
+            <div class="chapter-row">
+                <a href="#">Bölüm 33</a>
+                <span class="chapter-date">Ağustos 16, 2026</span>
+            </div>
         </div>
+    </article>
 
-        <div class="chapter-line">
-            <a href="#">Chapter 93</a>
-            <span class="volume">Vol. 5</span>
-            <span class="date">2 days ago</span>
+
+    <article class="manga-item">
+        <div class="manga-cover">RED STRING</div>
+        <div class="manga-info">
+            <h3><a href="#">Red String Quests</a></h3>
+            <span class="rating">★ 4.3</span>
+
+            <div class="chapter-row">
+                <a href="#">Bölüm 58</a>
+                <span class="chapter-date">Ağustos 19, 2026</span>
+            </div>
+
+            <div class="chapter-row">
+                <a href="#">Bölüm 57</a>
+                <span class="chapter-date">Ağustos 19, 2026</span>
+            </div>
         </div>
-
-    </div>
-
-</div>
+    </article>
 
 
-<!-- MANGA 3 -->
+    <article class="manga-item">
+        <div class="manga-cover">SISYPHUS</div>
+        <div class="manga-info">
+            <h3><a href="#">The Hounds of Sisyphus</a></h3>
+            <span class="rating">★ 4.2</span>
 
-<div class="manga-item">
+            <div class="chapter-row">
+                <a href="#">Bölüm 40</a>
+                <span class="chapter-date">Ağustos 17, 2026</span>
+            </div>
 
-    <div class="manga-cover three"></div>
-
-    <div class="manga-info">
-
-        <div class="manga-name">
-            Painter of the Night
+            <div class="chapter-row">
+                <a href="#">Bölüm 39</a>
+                <span class="chapter-date">Ağustos 17, 2026</span>
+            </div>
         </div>
+    </article>
 
-        <div class="author">
-            Byeonduck
+
+    <article class="manga-item">
+        <div class="manga-cover">REVENGE</div>
+        <div class="manga-info">
+            <h3><a href="#">Revenge</a></h3>
+            <span class="rating">★ 3.7</span>
+
+            <div class="chapter-row">
+                <a href="#">Bölüm 46</a>
+                <span class="chapter-date">Ağustos 16, 2026</span>
+            </div>
+
+            <div class="chapter-row">
+                <a href="#">Bölüm 45</a>
+                <span class="chapter-date">Ağustos 16, 2026</span>
+            </div>
         </div>
+    </article>
 
-        <div class="rating">
-            ★★★★★
-            <span class="rating-number">4.9</span>
+</section>
+
+
+<!-- TAMAMLANAN SERİLER -->
+
+<h2 class="section-title">Tamamlanan Seriler</h2>
+
+<section class="completed">
+
+    <article class="completed-item">
+        <h3><a href="#">Taming The Tiger</a></h3>
+        <div class="chapters">
+            <a class="chapter" href="#">Bölüm 80</a>
+            <a class="chapter" href="#">Bölüm 79</a>
         </div>
+    </article>
 
-        <div class="chapter-line">
-            <a href="#">Chapter 129</a>
-            <span class="volume">Vol. 6</span>
-            <span class="date">Yesterday</span>
+    <article class="completed-item">
+        <h3><a href="#">Free! Dj – Kocchi Muite Maid-san</a></h3>
+        <div class="chapters">
+            <a class="chapter" href="#">Bölüm 1</a>
         </div>
+    </article>
 
-        <div class="chapter-line">
-            <a href="#">Chapter 128</a>
-            <span class="volume">Vol. 6</span>
-            <span class="date">5 days ago</span>
+    <article class="completed-item">
+        <h3><a href="#">SK8 the Infinity Dj – Adolescence</a></h3>
+        <div class="chapters">
+            <a class="chapter" href="#">Bölüm 1</a>
         </div>
+    </article>
 
-    </div>
-
-</div>
-
-
-<!-- MANGA 4 -->
-
-<div class="manga-item">
-
-    <div class="manga-cover four">
-        <span class="badge">New</span>
-    </div>
-
-    <div class="manga-info">
-
-        <div class="manga-name">
-            Semantic Error
+    <article class="completed-item">
+        <h3><a href="#">Snow Fairy</a></h3>
+        <div class="chapters">
+            <a class="chapter" href="#">Bölüm 6.5</a>
+            <a class="chapter" href="#">Bölüm 6</a>
         </div>
+    </article>
 
-        <div class="author">
-            Jeosuri
-        </div>
-
-        <div class="rating">
-            ★★★★★
-            <span class="rating-number">4.6</span>
-        </div>
-
-        <div class="chapter-line">
-            <a href="#">Chapter 88</a>
-            <span class="volume">Vol. 3</span>
-            <span class="date">2 days ago</span>
-        </div>
-
-        <div class="chapter-line">
-            <a href="#">Chapter 87</a>
-            <span class="volume">Vol. 3</span>
-            <span class="date">1 week ago</span>
-        </div>
-
-    </div>
-
-</div>
+</section>
 
 
-<!-- MANGA 5 -->
+<!-- KISA BİR ŞEYLER -->
 
-<div class="manga-item">
+<h2 class="section-title">Kısa Bir Şeyler</h2>
 
-    <div class="manga-cover five">
-        <span class="badge adult">18+</span>
-    </div>
+<section class="short-list">
 
-    <div class="manga-info">
+    <article class="short-item">
+        <h3>
+            <a href="#">Free! Dj – Kocchi Muite Maid-san</a>
+        </h3>
 
-        <div class="manga-name">
-            Love History
-        </div>
+        <a class="chapter" href="#">Bölüm 1</a>
+        <span class="date">Kasım 5, 2024</span>
+    </article>
 
-        <div class="author">
-            Various
-        </div>
+    <article class="short-item">
+        <h3>
+            <a href="#">SK8 the Infinity Dj – Adolescence</a>
+        </h3>
 
-        <div class="rating">
-            ★★★★★
-            <span class="rating-number">4.5</span>
-        </div>
-
-        <div class="chapter-line">
-            <a href="#">Chapter 61</a>
-            <span class="volume">Vol. 2</span>
-            <span class="date">3 days ago</span>
-        </div>
-
-        <div class="chapter-line">
-            <a href="#">Chapter 60</a>
-            <span class="volume">Vol. 2</span>
-            <span class="date">1 week ago</span>
-        </div>
-
-    </div>
-
-</div>
-
-
-<a href="#" class="load-more">
-    Load More
-</a>
-
-</div>
-
-
-<!-- SIDEBAR -->
-
-<aside>
-
-<div class="sidebar-box">
-
-    <div class="sidebar-title">
-        All Genres
-    </div>
-
-    <ul class="genres">
-
-        <li><a href="#">Action <span class="genre-count">12</span></a></li>
-        <li><a href="#">Adult <span class="genre-count">6</span></a></li>
-        <li><a href="#">Adventure <span class="genre-count">10</span></a></li>
-        <li><a href="#">Comedy <span class="genre-count">13</span></a></li>
-        <li><a href="#">Drama <span class="genre-count">6</span></a></li>
-        <li><a href="#">Ecchi <span class="genre-count">7</span></a></li>
-        <li><a href="#">Fantasy <span class="genre-count">8</span></a></li>
-        <li><a href="#">Harem <span class="genre-count">11</span></a></li>
-        <li><a href="#">Historical <span class="genre-count">9</span></a></li>
-        <li><a href="#">Horror <span class="genre-count">11</span></a></li>
-        <li><a href="#">Josei <span class="genre-count">10</span></a></li>
-        <li><a href="#">Manga <span class="genre-count">7</span></a></li>
-        <li><a href="#">Manhua <span class="genre-count">4</span></a></li>
-        <li><a href="#">Manhwa <span class="genre-count">5</span></a></li>
-        <li><a href="#">Mature <span class="genre-count">10</span></a></li>
-        <li><a href="#">Mystery <span class="genre-count">8</span></a></li>
-        <li><a href="#">Romance <span class="genre-count">8</span></a></li>
-        <li><a href="#">School Life <span class="genre-count">8</span></a></li>
-        <li><a href="#">Sci-fi <span class="genre-count">11</span></a></li>
-        <li><a href="#">Seinen <span class="genre-count">11</span></a></li>
-        <li><a href="#">Shoujo <span class="genre-count">10</span></a></li>
-        <li><a href="#">Shounen <span class="genre-count">11</span></a></li>
-        <li><a href="#">Slice of Life <span class="genre-count">7</span></a></li>
-        <li><a href="#">Sports <span class="genre-count">10</span></a></li>
-        <li><a href="#">Supernatural <span class="genre-count">10</span></a></li>
-        <li><a href="#">Tragedy <span class="genre-count">12</span></a></li>
-        <li><a href="#">Webtoon <span class="genre-count">9</span></a></li>
-        <li><a href="#">Yaoi <span class="genre-count">12</span></a></li>
-
-    </ul>
-
-</div>
-
-</aside>
-
-</div>
+        <a class="chapter" href="#">Bölüm 1</a>
+        <span class="date">Kasım 5, 2024</span>
+    </article>
 
 </section>
 
 </main>
 
 
-<!-- FOOTER -->
+<footer>
+<div class="container footer">
 
-<footer class="footer">
-
-<div class="container footer-inner">
-
-    <div>
-        <div class="footer-logo">
-            MY<span>MANGA</span>
-        </div>
-
-        <div class="footer-text">
-            Manga & Webtoon Reading Platform
-        </div>
+    <div class="footer-logo">
+        My<span>Manga</span>
     </div>
 
-    <div class="footer-text">
-        © 2026 MyManga
-    </div>
+    <p>
+        2026 © MyManga All rights reserved
+    </p>
 
 </div>
-
 </footer>
+
+
+<script>
+
+function searchManga(){
+
+    const input =
+        document.querySelector(".search input").value.trim();
+
+    if(input === ""){
+        return;
+    }
+
+    alert("Aranıyor: " + input);
+}
+
+document
+.querySelector(".search input")
+.addEventListener("keydown", function(e){
+
+    if(e.key === "Enter"){
+        searchManga();
+    }
+
+});
+
+</script>
 
 </body>
 </html>
