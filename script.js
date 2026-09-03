@@ -1,47 +1,94 @@
-function openSearch() {
-    document.getElementById("searchBox").style.display = "block";
-    document.getElementById("searchInput").focus();
-}
+```javascript
+/* =========================
+   SEARCH
+========================= */
 
-function closeSearch() {
-    document.getElementById("searchBox").style.display = "none";
-}
-
-function doSearch() {
-
-    const value = document
-        .getElementById("searchInput")
-        .value
-        .trim();
-
-    if (!value) return;
-
-    alert("Arama: " + value);
-}
-
-document
-    .getElementById("searchInput")
-    .addEventListener("keydown", function(event) {
-
-        if (event.key === "Enter") {
-            doSearch();
-        }
-
-        if (event.key === "Escape") {
-            closeSearch();
-        }
-
-    });
+const openSearch = document.getElementById("openSearch");
+const closeSearch = document.getElementById("closeSearch");
+const searchOverlay = document.getElementById("searchOverlay");
+const searchInput = document.getElementById("searchInput");
+const searchSubmit = document.getElementById("searchSubmit");
 
 
-document
-    .querySelector(".load-more")
-    .addEventListener("click", function() {
+openSearch.addEventListener("click", () => {
 
-        this.innerText = "YÜKLENİYOR...";
+    searchOverlay.classList.add("active");
 
-        setTimeout(() => {
-            this.innerText = "LOAD MORE";
-        }, 700);
+    setTimeout(() => {
+        searchInput.focus();
+    }, 100);
 
-    });
+});
+
+
+closeSearch.addEventListener("click", () => {
+
+    searchOverlay.classList.remove("active");
+
+});
+
+
+searchOverlay.addEventListener("click", (event) => {
+
+    if (event.target === searchOverlay) {
+
+        searchOverlay.classList.remove("active");
+
+    }
+
+});
+
+
+document.addEventListener("keydown", (event) => {
+
+    if (event.key === "Escape") {
+
+        searchOverlay.classList.remove("active");
+
+    }
+
+});
+
+
+searchSubmit.addEventListener("click", () => {
+
+    const value = searchInput.value.trim();
+
+    if (!value) {
+
+        searchInput.focus();
+
+        return;
+
+    }
+
+    alert("Search: " + value);
+
+});
+
+
+searchInput.addEventListener("keydown", (event) => {
+
+    if (event.key === "Enter") {
+
+        searchSubmit.click();
+
+    }
+
+});
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+const mobileMenu = document.getElementById("mobileMenu");
+const mobileNav = document.getElementById("mobileNav");
+
+
+mobileMenu.addEventListener("click", () => {
+
+    mobileNav.classList.toggle("active");
+
+});
+```
