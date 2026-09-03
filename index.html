@@ -1,666 +1,192 @@
-```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>MyManga</title>
+    <title>BalSu</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+    <header>
+        <div class="logo">Bal<span>Su</span></div>
 
-<header class="site-header">
-
-    <div class="header-inner">
-
-        <a href="#" class="logo">
-            MY<span>MANGA</span>
-        </a>
-
-        <nav class="main-nav">
-            <a href="#">Home</a>
-            <a href="#">Manga</a>
-            <a href="#">Novel</a>
-            <a href="#">Bookmark</a>
+        <nav>
+            <a href="#">Ana Sayfa</a>
+            <a href="#">Seriler</a>
+            <a href="#">Türler</a>
+            <a href="#">Güncellemeler</a>
         </nav>
 
-        <div class="header-actions">
+        <button class="search">⌕</button>
+    </header>
 
-            <button class="search-button" id="openSearch">
-                <span>⌕</span>
-                <span class="search-text">Search</span>
-            </button>
 
-            <a href="#" class="login">Login</a>
+    <main>
 
-        </div>
+        <section class="hero">
 
-        <button class="mobile-menu" id="mobileMenu">
-            ☰
-        </button>
+            <div class="hero-text">
 
-    </div>
+                <small>✦ BALSU'YA HOŞ GELDİN</small>
 
-</header>
+                <h1>
+                    Webtoon dünyasına
+                    <br>
+                    <em>hoş geldin.</em>
+                </h1>
 
-
-<!-- ================= MOBILE NAV ================= -->
-
-<div class="mobile-nav" id="mobileNav">
-
-    <a href="#">Home</a>
-    <a href="#">Manga</a>
-    <a href="#">Novel</a>
-    <a href="#">Bookmark</a>
-    <a href="#">Login</a>
-
-</div>
-
-
-<!-- ================= SEARCH ================= -->
-
-<div class="search-overlay" id="searchOverlay">
-
-    <div class="search-window">
-
-        <button class="close-search" id="closeSearch">×</button>
-
-        <div class="search-title">
-            Search Manga
-        </div>
-
-        <div class="search-input-wrap">
-
-            <input
-                type="text"
-                id="searchInput"
-                placeholder="Search manga..."
-            >
-
-            <button id="searchSubmit">
-                Search
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- ================= MAIN ================= -->
-
-<main>
-
-
-<!-- ================= ANNOUNCEMENT ================= -->
-
-<section class="announcement">
-
-    <div class="announcement-icon">
-        !
-    </div>
-
-    <div class="announcement-content">
-
-        <div class="announcement-title">
-            Important Announcement
-        </div>
-
-        <div class="announcement-text">
-            Welcome to MyManga! You can find your favorite manga,
-            webtoons and novels here.
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= POPULAR ================= -->
-
-<section class="section">
-
-    <div class="section-header">
-
-        <div>
-            <h2>Popular</h2>
-            <p>Most popular series</p>
-        </div>
-
-        <a href="#" class="view-all">
-            View All →
-        </a>
-
-    </div>
-
-
-    <div class="popular-grid">
-
-
-        <article class="popular-card">
-
-            <div class="cover cover-jinx">
-                <span>JINX</span>
-            </div>
-
-            <div class="card-info">
-
-                <h3>Jinx</h3>
-
-                <div class="meta">
-                    <span>Manhwa</span>
-                    <span>•</span>
-                    <span>Ongoing</span>
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-        <article class="popular-card">
-
-            <div class="cover cover-shut">
-                <span>SHUT LINE</span>
-            </div>
-
-            <div class="card-info">
-
-                <h3>Shutline</h3>
-
-                <div class="meta">
-                    <span>Manhwa</span>
-                    <span>•</span>
-                    <span>Ongoing</span>
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-        <article class="popular-card">
-
-            <div class="cover cover-painter">
-                <span>PAINTER<br>OF THE NIGHT</span>
-            </div>
-
-            <div class="card-info">
-
-                <h3>Painter of the Night</h3>
-
-                <div class="meta">
-                    <span>Manhwa</span>
-                    <span>•</span>
-                    <span>Completed</span>
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-        <article class="popular-card">
-
-            <div class="cover cover-semantic">
-                <span>SEMANTIC<br>ERROR</span>
-            </div>
-
-            <div class="card-info">
-
-                <h3>Semantic Error</h3>
-
-                <div class="meta">
-                    <span>Manhwa</span>
-                    <span>•</span>
-                    <span>Completed</span>
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-        <article class="popular-card">
-
-            <div class="cover cover-codename">
-                <span>CODENAME<br>ANASTASIA</span>
-            </div>
-
-            <div class="card-info">
-
-                <h3>Codename Anastasia</h3>
-
-                <div class="meta">
-                    <span>Manhwa</span>
-                    <span>•</span>
-                    <span>Ongoing</span>
-                </div>
-
-            </div>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= NEW CHAPTERS ================= -->
-
-<section class="section">
-
-    <div class="section-header">
-
-        <div>
-            <h2>New Chapters</h2>
-            <p>Recently updated manga</p>
-        </div>
-
-        <a href="#" class="view-all">
-            View All →
-        </a>
-
-    </div>
-
-
-    <div class="content-grid">
-
-
-        <div class="chapter-list">
-
-
-            <article class="chapter-card">
-
-                <div class="small-cover cover-jinx"></div>
-
-                <div class="chapter-info">
-
-                    <h3>Jinx</h3>
-
-                    <div class="chapter-row">
-
-                        <a href="#">
-                            Chapter 85
-                        </a>
-
-                        <span>
-                            2 hours ago
-                        </span>
-
-                    </div>
-
-                    <div class="chapter-row">
-
-                        <a href="#">
-                            Chapter 84
-                        </a>
-
-                        <span>
-                            3 days ago
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-
-            <article class="chapter-card">
-
-                <div class="small-cover cover-shut"></div>
-
-                <div class="chapter-info">
-
-                    <h3>Shutline</h3>
-
-                    <div class="chapter-row">
-
-                        <a href="#">
-                            Chapter 98
-                        </a>
-
-                        <span>
-                            5 hours ago
-                        </span>
-
-                    </div>
-
-                    <div class="chapter-row">
-
-                        <a href="#">
-                            Chapter 97
-                        </a>
-
-                        <span>
-                            4 days ago
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-
-            <article class="chapter-card">
-
-                <div class="small-cover cover-semantic"></div>
-
-                <div class="chapter-info">
-
-                    <h3>Semantic Error</h3>
-
-                    <div class="chapter-row">
-
-                        <a href="#">
-                            Chapter 72
-                        </a>
-
-                        <span>
-                            1 day ago
-                        </span>
-
-                    </div>
-
-                    <div class="chapter-row">
-
-                        <a href="#">
-                            Chapter 71
-                        </a>
-
-                        <span>
-                            1 week ago
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-
-            <article class="chapter-card">
-
-                <div class="small-cover cover-painter"></div>
-
-                <div class="chapter-info">
-
-                    <h3>Painter of the Night</h3>
-
-                    <div class="chapter-row">
-
-                        <a href="#">
-                            Chapter 129
-                        </a>
-
-                        <span>
-                            2 days ago
-                        </span>
-
-                    </div>
-
-                    <div class="chapter-row">
-
-                        <a href="#">
-                            Chapter 128
-                        </a>
-
-                        <span>
-                            1 week ago
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-
-            <article class="chapter-card">
-
-                <div class="small-cover cover-codename"></div>
-
-                <div class="chapter-info">
-
-                    <h3>Codename Anastasia</h3>
-
-                    <div class="chapter-row">
-
-                        <a href="#">
-                            Chapter 58
-                        </a>
-
-                        <span>
-                            3 days ago
-                        </span>
-
-                    </div>
-
-                    <div class="chapter-row">
-
-                        <a href="#">
-                            Chapter 57
-                        </a>
-
-                        <span>
-                            2 weeks ago
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-
-            <article class="chapter-card">
-
-                <div class="small-cover cover-random"></div>
-
-                <div class="chapter-info">
-
-                    <h3>Love Tractor</h3>
-
-                    <div class="chapter-row">
-
-                        <a href="#">
-                            Chapter 42
-                        </a>
-
-                        <span>
-                            4 days ago
-                        </span>
-
-                    </div>
-
-                    <div class="chapter-row">
-
-                        <a href="#">
-                            Chapter 41
-                        </a>
-
-                        <span>
-                            1 week ago
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-        </div>
-
-
-
-        <!-- ================= SIDEBAR ================= -->
-
-        <aside class="sidebar">
-
-            <div class="sidebar-box">
-
-                <div class="sidebar-title">
-                    <h3>Completed Series</h3>
-                    <a href="#">View All</a>
-                </div>
-
-                <div class="sidebar-item">
-
-                    <div class="mini-cover cover-semantic"></div>
-
-                    <div>
-                        <strong>Semantic Error</strong>
-                        <span>Completed</span>
-                    </div>
-
-                </div>
-
-
-                <div class="sidebar-item">
-
-                    <div class="mini-cover cover-painter"></div>
-
-                    <div>
-                        <strong>Painter of the Night</strong>
-                        <span>Completed</span>
-                    </div>
-
-                </div>
-
-
-                <div class="sidebar-item">
-
-                    <div class="mini-cover cover-random"></div>
-
-                    <div>
-                        <strong>Love Tractor</strong>
-                        <span>Completed</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="sidebar-box">
-
-                <div class="sidebar-title">
-                    <h3>Short Things</h3>
-                    <a href="#">View All</a>
-                </div>
-
-                <p class="sidebar-description">
-                    Discover short stories and quick reads.
+                <p>
+                    En sevdiğin webtoon ve mangaları
+                    Türkçe olarak keşfet ve okumaya başla.
                 </p>
 
+                <div class="buttons">
+
+                    <a href="#" class="button main-button">
+                        Serileri Keşfet →
+                    </a>
+
+                    <a href="#" class="button">
+                        Son Güncellemeler
+                    </a>
+
+                </div>
+
             </div>
 
-        </aside>
 
-    </div>
+            <div class="hero-image">
 
-</section>
+                <div class="image-card">
+                    <div class="fake-cover">
+                        <span>BalSu</span>
+                    </div>
+                </div>
 
-
-
-<!-- ================= GENRES ================= -->
-
-<section class="section genres-section">
-
-    <div class="section-header">
-
-        <div>
-            <h2>Genres</h2>
-            <p>Browse manga by genre</p>
-        </div>
-
-    </div>
-
-
-    <div class="genres">
-
-        <a href="#">Action</a>
-        <a href="#">Adventure</a>
-        <a href="#">Comedy</a>
-        <a href="#">Drama</a>
-        <a href="#">Fantasy</a>
-        <a href="#">Romance</a>
-        <a href="#">School Life</a>
-        <a href="#">Shoujo</a>
-        <a href="#">Shounen</a>
-        <a href="#">Slice of Life</a>
-        <a href="#">Sports</a>
-        <a href="#">Yaoi</a>
-
-    </div>
-
-</section>
-
-
-</main>
-
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-    <div class="footer-inner">
-
-        <div>
-
-            <div class="footer-logo">
-                MYMANGA
             </div>
 
-            <p>
-                Read your favorite manga online.
-            </p>
-
-        </div>
+        </section>
 
 
-        <div class="footer-links">
+        <section class="latest">
 
-            <a href="#">Home</a>
-            <a href="#">Manga</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
+            <div class="section-title">
 
-        </div>
+                <div>
+                    <small>KEŞFET</small>
+                    <h2>Son Eklenenler</h2>
+                </div>
 
-    </div>
+                <a href="#">Tümünü Gör →</a>
 
-    <div class="copyright">
-        © 2026 MyManga. All rights reserved.
-    </div>
-
-</footer>
+            </div>
 
 
+            <div class="series">
 
-<script src="script.js"></script>
+                <article class="card">
+                    <div class="cover cover1">
+                        <span>01</span>
+                    </div>
+
+                    <h3>Seri Adı</h3>
+                    <p>Bölüm 12 · 2 gün önce</p>
+                </article>
+
+
+                <article class="card">
+                    <div class="cover cover2">
+                        <span>02</span>
+                    </div>
+
+                    <h3>Seri Adı</h3>
+                    <p>Bölüm 08 · 3 gün önce</p>
+                </article>
+
+
+                <article class="card">
+                    <div class="cover cover3">
+                        <span>03</span>
+                    </div>
+
+                    <h3>Seri Adı</h3>
+                    <p>Bölüm 21 · 5 gün önce</p>
+                </article>
+
+
+                <article class="card">
+                    <div class="cover cover4">
+                        <span>04</span>
+                    </div>
+
+                    <h3>Seri Adı</h3>
+                    <p>Bölüm 05 · 1 hafta önce</p>
+                </article>
+
+
+                <article class="card">
+                    <div class="cover cover5">
+                        <span>05</span>
+                    </div>
+
+                    <h3>Seri Adı</h3>
+                    <p>Bölüm 17 · 1 hafta önce</p>
+                </article>
+
+
+                <article class="card">
+                    <div class="cover cover6">
+                        <span>06</span>
+                    </div>
+
+                    <h3>Seri Adı</h3>
+                    <p>Bölüm 03 · 2 hafta önce</p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section class="genres">
+
+            <small>TÜRLER</small>
+
+            <h2>Ne okumak istersin?</h2>
+
+            <div class="genre-buttons">
+
+                <a href="#">Romantik</a>
+                <a href="#">Aksiyon</a>
+                <a href="#">Fantastik</a>
+                <a href="#">Dram</a>
+                <a href="#">Komedi</a>
+                <a href="#">Macera</a>
+                <a href="#">Okul</a>
+                <a href="#">BL</a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="logo">Bal<span>Su</span></div>
+
+        <p>
+            Webtoon dünyasına açılan küçük bir kapı.
+        </p>
+
+        <span>© 2026 BalSu</span>
+
+    </footer>
 
 </body>
 </html>
-```
