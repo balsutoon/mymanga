@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MyManga</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;background:#fff;color:#333}
+a{text-decoration:none;color:inherit}
+.container{width:1170px;max-width:94%;margin:auto}
+
+/* HEADER */
+.header{
+    height:75px;
+    border-bottom:1px solid #eee;
+    background:#fff;
+}
+.header-inner{
+    height:100%;
+    display:flex;
+    align-items:center;
+}
+.logo{
+    font-size:27px;
+    font-weight:700;
+    color:#222;
+    margin-right:60px;
+}
+.logo span{color:#eb3349}
+.menu{
+    display:flex;
+    gap:28px;
+    flex:1;
+}
+.menu a{
+    font-size:13px;
+    font-weight:600;
+    color:#555;
+    text-transform:uppercase;
+}
+.menu a:hover{color:#eb3349}
+.header-search{
+    font-size:20px;
+    color:#555;
+}
+
+/* HERO */
+.hero{
+    margin-top:25px;
+    height:390px;
+    background:#222;
+    position:relative;
+    overflow:hidden;
+}
+.hero-bg{
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(90deg,rgba(0,0,0,.95),rgba(0,0,0,.55),rgba(0,0,0,.15)),
+        linear-gradient(135deg,#762538,#111 70%);
+}
+.hero-content{
+    position:relative;
+    height:100%;
+    display:flex;
+    align-items:center;
+}
+.hero-cover{
+    width:245px;
+    height:330px;
+    margin-left:40px;
+    background:linear-gradient(145deg,#762538,#222);
+    flex-shrink:0;
+}
+.hero-text{
+    padding-left:45px;
+    max-width:650px;
+    color:#fff;
+}
+.hero-label{
+    font-size:11px;
+    text-transform:uppercase;
+    color:#eb3349;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+.hero h1{
+    font-size:43px;
+    margin-bottom:15px;
+}
+.hero-meta{
+    font-size:12px;
+    margin-bottom:20px;
+    color:#ddd;
+}
+.hero p{
+    font-size:13px;
+    line-height:1.8;
+    color:#bbb;
+    margin-bottom:25px;
+}
+.btn{
+    display:inline-block;
+    background:#eb3349;
+    color:#fff;
+    padding:12px 25px;
+    font-size:11px;
+    text-transform:uppercase;
+    font-weight:bold;
+}
+.btn:hover{background:#fff;color:#222}
+
+/* SECTION */
+.section{padding:45px 0}
+.title{
+    border-bottom:2px solid #eee;
+    margin-bottom:25px;
+}
+.title h2{
+    display:inline-block;
+    font-size:20px;
+    color:#333;
+    padding-bottom:12px;
+    border-bottom:2px solid #eb3349;
+    margin-bottom:-2px;
+}
+
+/* POPULAR */
+.popular{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:20px;
+}
+.card-cover{
+    height:260px;
+    position:relative;
+    background:#ddd;
+    overflow:hidden;
+}
+.card-cover:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(transparent 45%,rgba(0,0,0,.75));
+}
+.cover-word{
+    position:absolute;
+    z-index:2;
+    bottom:15px;
+    left:15px;
+    color:#fff;
+    font-size:17px;
+    font-weight:bold;
+}
+.cover1{background:linear-gradient(145deg,#79243b,#111)}
+.cover2{background:linear-gradient(145deg,#24384c,#111)}
+.cover3{background:linear-gradient(145deg,#76513c,#111)}
+.cover4{background:linear-gradient(145deg,#879daf,#222)}
+.cover5{background:linear-gradient(145deg,#713b57,#111)}
+.card h3{
+    margin-top:12px;
+    font-size:14px;
+    color:#333;
+}
+.card-info{
+    margin-top:6px;
+    font-size:11px;
+    color:#999;
+}
+
+/* MAIN CONTENT */
+.main-content{
+    display:grid;
+    grid-template-columns:1fr 270px;
+    gap:35px;
+}
+
+/* LATEST */
+.latest-item{
+    display:flex;
+    padding:0 0 22px;
+    margin-bottom:22px;
+    border-bottom:1px solid #eee;
+}
+.latest-cover{
+    width:100px;
+    height:135px;
+    flex-shrink:0;
+    background:#ddd;
+}
+.latest-info{
+    padding-left:18px;
+    flex:1;
+}
+.latest-info h3{
+    color:#333;
+    font-size:15px;
+    margin-bottom:7px;
+}
+.latest-author{
+    font-size:11px;
+    color:#999;
+    margin-bottom:15px;
+}
+.chapter{
+    display:flex;
+    justify-content:space-between;
+    background:#f5f5f5;
+    padding:8px 10px;
+    margin-bottom:5px;
+    font-size:11px;
+}
+.chapter a{color:#555}
+.chapter-date{color:#aaa}
+
+/* SIDEBAR */
+.sidebar-widget{
+    border:1px solid #eee;
+    margin-bottom:25px;
+}
+.widget-title{
+    background:#f7f7f7;
+    border-bottom:2px solid #eb3349;
+    padding:14px 16px;
+    color:#333;
+    font-size:14px;
+    font-weight:bold;
+    text-transform:uppercase;
+}
+.genres li{
+    list-style:none;
+    border-bottom:1px solid #eee;
+}
+.genres a{
+    display:flex;
+    justify-content:space-between;
+    padding:10px 15px;
+    font-size:12px;
+    color:#777;
+}
+.genres a:hover{color:#eb3349}
+.count{color:#bbb}
+
+/* FOOTER */
+.footer{
+    margin-top:30px;
+    background:#222;
+    color:#999;
+    padding:40px 0;
+}
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.footer .logo{color:#fff;margin:0}
+.footer p{font-size:11px}
+
+/* MOBILE */
+@media(max-width:900px){
+    .menu{display:none}
+    .logo{margin-right:auto}
+    .hero-cover{margin-left:20px;width:190px}
+    .hero-text{padding-left:25px}
+    .popular{grid-template-columns:repeat(3,1fr)}
+    .main-content{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+    .hero{height:430px}
+    .hero-cover{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:.3}
+    .hero-text{position:relative;padding:30px}
+    .hero h1{font-size:34px}
+    .popular{grid-template-columns:repeat(2,1fr);gap:15px}
+    .card-cover{height:230px}
+    .footer-inner{display:block}
+    .footer p{margin-top:15px}
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+<div class="container header-inner">
+
+    <div class="logo">
+        MY<span>MANGA</span>
+    </div>
+
+    <nav class="menu">
+        <a href="#">Home</a>
+        <a href="#">Manga</a>
+        <a href="#">Novel</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div class="header-search">⌕</div>
+
+</div>
+</header>
+
+
+<section class="container hero">
+
+<div class="hero-bg"></div>
+
+<div class="hero-content">
+
+    <div class="hero-cover"></div>
+
+    <div class="hero-text">
+
+        <div class="hero-label">Featured Series</div>
+
+        <h1>Shut Line</h1>
+
+        <div class="hero-meta">
+            Drama &nbsp; • &nbsp; Romance &nbsp; • &nbsp; Yaoi
+        </div>
+
+        <p>
+            Favori manga ve webtoon serilerini keşfet.
+            Güncel bölümleri takip et ve okumaya hemen başla.
+        </p>
+
+        <a href="#" class="btn">Read Now</a>
+
+    </div>
+
+</div>
+</section>
+
+
+<section class="container section">
+
+<div class="title">
+    <h2>Popular Series</h2>
+</div>
+
+<div class="popular">
+
+    <div class="card">
+        <div class="card-cover cover1">
+            <div class="cover-word">JINX</div>
+        </div>
+        <h3>Jinx</h3>
+        <div class="card-info">Chapter 84</div>
+    </div>
+
+    <div class="card">
+        <div class="card-cover cover2">
+            <div class="cover-word">SHUT LINE</div>
+        </div>
+        <h3>Shut Line</h3>
+        <div class="card-info">Chapter 94</div>
+    </div>
+
+    <div class="card">
+        <div class="card-cover cover3">
+            <div class="cover-word">PAINTER OF THE NIGHT</div>
+        </div>
+        <h3>Painter of the Night</h3>
+        <div class="card-info">Chapter 129</div>
+    </div>
+
+    <div class="card">
+        <div class="card-cover cover4">
+            <div class="cover-word">SEMANTIC ERROR</div>
+        </div>
+        <h3>Semantic Error</h3>
+        <div class="card-info">Chapter 88</div>
+    </div>
+
+    <div class="card">
+        <div class="card-cover cover5">
+            <div class="cover-word">LOVE HISTORY</div>
+        </div>
+        <h3>Love History</h3>
+        <div class="card-info">Chapter 61</div>
+    </div>
+
+</div>
+</section>
+
+
+<section class="container section">
+
+<div class="main-content">
+
+<div>
+
+    <div class="title">
+        <h2>Latest Manga Updates</h2>
+    </div>
+
+    <div class="latest-item">
+
+        <div class="latest-cover cover1"></div>
+
+        <div class="latest-info">
+
+            <h3>Jinx</h3>
+
+            <div class="latest-author">
+                Author: Mingwa
+            </div>
+
+            <div class="chapter">
+                <a href="#">Chapter 84</a>
+                <span class="chapter-date">Today</span>
+            </div>
+
+            <div class="chapter">
+                <a href="#">Chapter 83</a>
+                <span class="chapter-date">3 days ago</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="latest-item">
+
+        <div class="latest-cover cover2"></div>
+
+        <div class="latest-info">
+
+            <h3>Shut Line</h3>
+
+            <div class="latest-author">
+                Author: Kyou
+            </div>
+
+            <div class="chapter">
+                <a href="#">Chapter 94</a>
+                <span class="chapter-date">Today</span>
+            </div>
+
+            <div class="chapter">
+                <a href="#">Chapter 93</a>
+                <span class="chapter-date">2 days ago</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="latest-item">
+
+        <div class="latest-cover cover3"></div>
+
+        <div class="latest-info">
+
+            <h3>Painter of the Night</h3>
+
+            <div class="latest-author">
+                Author: Byeonduck
+            </div>
+
+            <div class="chapter">
+                <a href="#">Chapter 129</a>
+                <span class="chapter-date">Yesterday</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<aside>
+
+<div class="sidebar-widget">
+
+    <div class="widget-title">
+        All Genres
+    </div>
+
+    <ul class="genres">
+
+        <li><a href="#">Action <span class="count">24</span></a></li>
+        <li><a href="#">Adventure <span class="count">18</span></a></li>
+        <li><a href="#">Comedy <span class="count">31</span></a></li>
+        <li><a href="#">Drama <span class="count">42</span></a></li>
+        <li><a href="#">Fantasy <span class="count">27</span></a></li>
+        <li><a href="#">Romance <span class="count">55</span></a></li>
+        <li><a href="#">Shoujo <span class="count">22</span></a></li>
+        <li><a href="#">Shounen <span class="count">17</span></a></li>
+        <li><a href="#">Yaoi <span class="count">29</span></a></li>
+
+    </ul>
+
+</div>
+
+</aside>
+
+</div>
+</section>
+
+
+<footer class="footer">
+
+<div class="container footer-inner">
+
+    <div>
+        <div class="logo">
+            MY<span>MANGA</span>
+        </div>
+        <p>© 2026 MyManga</p>
+    </div>
+
+    <p>Manga & Webtoon Reading Platform</p>
+
+</div>
+
+</footer>
+
+</body>
+</html>
