@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,280 +7,585 @@
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,Helvetica,sans-serif;background:#fff;color:#333}
-a{text-decoration:none;color:inherit}
-.container{width:1170px;max-width:94%;margin:auto}
 
-/* HEADER */
-.header{
-    height:75px;
-    border-bottom:1px solid #eee;
-    background:#fff;
+body{
+    background:#171717;
+    color:#999;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:13px;
 }
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:1170px;
+    max-width:92%;
+    margin:auto;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+    height:78px;
+    background:#202020;
+    border-bottom:1px solid #303030;
+}
+
 .header-inner{
     height:100%;
     display:flex;
     align-items:center;
 }
+
 .logo{
-    font-size:27px;
+    font-size:29px;
     font-weight:700;
-    color:#222;
-    margin-right:60px;
-}
-.logo span{color:#eb3349}
-.menu{
-    display:flex;
-    gap:28px;
-    flex:1;
-}
-.menu a{
-    font-size:13px;
-    font-weight:600;
-    color:#555;
-    text-transform:uppercase;
-}
-.menu a:hover{color:#eb3349}
-.header-search{
-    font-size:20px;
-    color:#555;
+    color:#fff;
+    white-space:nowrap;
+    margin-right:55px;
 }
 
-/* HERO */
-.hero{
-    margin-top:25px;
-    height:390px;
-    background:#222;
-    position:relative;
+.logo span{
+    color:#eb3349;
+}
+
+.menu{
+    display:flex;
+    align-items:center;
+    gap:27px;
+    flex:1;
+}
+
+.menu a{
+    color:#ccc;
+    font-size:12px;
+    font-weight:bold;
+    text-transform:uppercase;
+}
+
+.menu a:hover{
+    color:#eb3349;
+}
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.search-icon{
+    color:#bbb;
+    font-size:21px;
+    cursor:pointer;
+}
+
+.sign{
+    font-size:11px;
+    color:#ccc;
+    text-transform:uppercase;
+}
+
+/* ================= CATEGORY BAR ================= */
+
+.category{
+    background:#111;
+    border-bottom:1px solid #292929;
+}
+
+.category-inner{
+    height:43px;
+    display:flex;
+    align-items:center;
+    gap:26px;
     overflow:hidden;
 }
-.hero-bg{
+
+.category a{
+    color:#999;
+    font-size:10px;
+    text-transform:uppercase;
+    white-space:nowrap;
+}
+
+.category a:hover{
+    color:#eb3349;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    height:350px;
+    margin-top:30px;
+    position:relative;
+    overflow:hidden;
+    background:#222;
+}
+
+.hero-background{
     position:absolute;
     inset:0;
     background:
-        linear-gradient(90deg,rgba(0,0,0,.95),rgba(0,0,0,.55),rgba(0,0,0,.15)),
-        linear-gradient(135deg,#762538,#111 70%);
+    linear-gradient(90deg,#090909 0%,rgba(9,9,9,.94) 25%,rgba(9,9,9,.55) 70%,rgba(9,9,9,.15)),
+    linear-gradient(135deg,#72263a,#161616 75%);
 }
+
 .hero-content{
     position:relative;
     height:100%;
     display:flex;
     align-items:center;
 }
+
 .hero-cover{
-    width:245px;
-    height:330px;
-    margin-left:40px;
-    background:linear-gradient(145deg,#762538,#222);
+    width:230px;
+    height:310px;
+    margin-left:35px;
     flex-shrink:0;
+    background:
+    linear-gradient(145deg,#8d2942,#181818);
+    position:relative;
 }
-.hero-text{
-    padding-left:45px;
-    max-width:650px;
-    color:#fff;
-}
-.hero-label{
-    font-size:11px;
-    text-transform:uppercase;
-    color:#eb3349;
+
+.hero-cover:after{
+    content:"SHUT LINE";
+    position:absolute;
+    left:20px;
+    bottom:20px;
+    color:white;
+    font-size:25px;
     font-weight:bold;
-    margin-bottom:15px;
 }
-.hero h1{
-    font-size:43px;
-    margin-bottom:15px;
+
+.hero-info{
+    padding-left:40px;
+    max-width:650px;
 }
+
+.hero-label{
+    color:#eb3349;
+    text-transform:uppercase;
+    font-size:10px;
+    font-weight:bold;
+    margin-bottom:12px;
+}
+
+.hero-title{
+    color:#fff;
+    font-size:40px;
+    margin-bottom:13px;
+}
+
 .hero-meta{
-    font-size:12px;
-    margin-bottom:20px;
-    color:#ddd;
+    color:#aaa;
+    font-size:11px;
+    margin-bottom:18px;
 }
-.hero p{
-    font-size:13px;
+
+.hero-description{
+    color:#aaa;
     line-height:1.8;
-    color:#bbb;
-    margin-bottom:25px;
+    font-size:12px;
+    margin-bottom:23px;
 }
-.btn{
-    display:inline-block;
+
+.read-btn{
     background:#eb3349;
     color:#fff;
-    padding:12px 25px;
-    font-size:11px;
+    padding:12px 22px;
     text-transform:uppercase;
+    font-size:10px;
     font-weight:bold;
 }
-.btn:hover{background:#fff;color:#222}
 
-/* SECTION */
-.section{padding:45px 0}
-.title{
-    border-bottom:2px solid #eee;
+.read-btn:hover{
+    background:#fff;
+    color:#222;
+}
+
+/* ================= TITLES ================= */
+
+.section{
+    margin-top:42px;
+}
+
+.section-title{
+    border-bottom:1px solid #333;
+    height:38px;
     margin-bottom:25px;
 }
-.title h2{
+
+.section-title h2{
     display:inline-block;
-    font-size:20px;
-    color:#333;
+    color:#eee;
+    font-size:18px;
+    text-transform:uppercase;
     padding-bottom:12px;
     border-bottom:2px solid #eb3349;
-    margin-bottom:-2px;
 }
 
-/* POPULAR */
+/* ================= POPULAR ================= */
+
 .popular{
     display:grid;
     grid-template-columns:repeat(5,1fr);
     gap:20px;
 }
-.card-cover{
-    height:260px;
-    position:relative;
-    background:#ddd;
-    overflow:hidden;
-}
-.card-cover:after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(transparent 45%,rgba(0,0,0,.75));
-}
-.cover-word{
-    position:absolute;
-    z-index:2;
-    bottom:15px;
-    left:15px;
-    color:#fff;
-    font-size:17px;
-    font-weight:bold;
-}
-.cover1{background:linear-gradient(145deg,#79243b,#111)}
-.cover2{background:linear-gradient(145deg,#24384c,#111)}
-.cover3{background:linear-gradient(145deg,#76513c,#111)}
-.cover4{background:linear-gradient(145deg,#879daf,#222)}
-.cover5{background:linear-gradient(145deg,#713b57,#111)}
-.card h3{
-    margin-top:12px;
-    font-size:14px;
-    color:#333;
-}
-.card-info{
-    margin-top:6px;
-    font-size:11px;
-    color:#999;
+
+.popular-card{
+    min-width:0;
 }
 
-/* MAIN CONTENT */
-.main-content{
+.popular-cover{
+    height:250px;
+    position:relative;
+    overflow:hidden;
+}
+
+.popular-cover.one{
+    background:linear-gradient(145deg,#77243b,#171717);
+}
+
+.popular-cover.two{
+    background:linear-gradient(145deg,#253f55,#171717);
+}
+
+.popular-cover.three{
+    background:linear-gradient(145deg,#795437,#171717);
+}
+
+.popular-cover.four{
+    background:linear-gradient(145deg,#61778c,#171717);
+}
+
+.popular-cover.five{
+    background:linear-gradient(145deg,#6b3856,#171717);
+}
+
+.cover-name{
+    position:absolute;
+    left:14px;
+    bottom:14px;
+    color:#fff;
+    font-size:15px;
+    font-weight:bold;
+}
+
+.popular-title{
+    color:#ddd;
+    font-size:13px;
+    margin-top:11px;
+}
+
+.popular-date{
+    color:#666;
+    font-size:10px;
+    margin-top:7px;
+}
+
+.chapter-row{
+    display:flex;
+    gap:5px;
+    margin-top:8px;
+}
+
+.chapter-row a{
+    background:#292929;
+    color:#bbb;
+    padding:6px 7px;
+    font-size:9px;
+}
+
+/* ================= MAIN ================= */
+
+.main{
     display:grid;
-    grid-template-columns:1fr 270px;
+    grid-template-columns:minmax(0,1fr) 270px;
     gap:35px;
 }
 
-/* LATEST */
-.latest-item{
+/* ================= MANGA RELEASE ================= */
+
+.manga-item{
     display:flex;
-    padding:0 0 22px;
-    margin-bottom:22px;
-    border-bottom:1px solid #eee;
+    min-height:160px;
+    border-bottom:1px solid #303030;
+    padding-bottom:20px;
+    margin-bottom:20px;
 }
-.latest-cover{
-    width:100px;
-    height:135px;
+
+.manga-cover{
+    width:115px;
+    height:155px;
     flex-shrink:0;
-    background:#ddd;
+    position:relative;
 }
-.latest-info{
-    padding-left:18px;
+
+.manga-cover.one{
+    background:linear-gradient(145deg,#77243b,#181818);
+}
+
+.manga-cover.two{
+    background:linear-gradient(145deg,#263e54,#181818);
+}
+
+.manga-cover.three{
+    background:linear-gradient(145deg,#765038,#181818);
+}
+
+.manga-cover.four{
+    background:linear-gradient(145deg,#61758a,#181818);
+}
+
+.manga-cover.five{
+    background:linear-gradient(145deg,#683853,#181818);
+}
+
+.manga-cover.six{
+    background:linear-gradient(145deg,#493d68,#181818);
+}
+
+.badge{
+    position:absolute;
+    top:8px;
+    left:8px;
+    background:#eb3349;
+    color:#fff;
+    font-size:8px;
+    padding:5px 7px;
+    text-transform:uppercase;
+    font-weight:bold;
+}
+
+.badge.hot{
+    background:#f39c12;
+}
+
+.badge.adult{
+    background:#8e44ad;
+}
+
+.manga-info{
+    padding-left:20px;
     flex:1;
 }
-.latest-info h3{
-    color:#333;
-    font-size:15px;
-    margin-bottom:7px;
-}
-.latest-author{
-    font-size:11px;
-    color:#999;
-    margin-bottom:15px;
-}
-.chapter{
-    display:flex;
-    justify-content:space-between;
-    background:#f5f5f5;
-    padding:8px 10px;
-    margin-bottom:5px;
-    font-size:11px;
-}
-.chapter a{color:#555}
-.chapter-date{color:#aaa}
 
-/* SIDEBAR */
-.sidebar-widget{
-    border:1px solid #eee;
-    margin-bottom:25px;
+.manga-name{
+    color:#eee;
+    font-size:15px;
+    font-weight:bold;
+    margin-bottom:8px;
 }
-.widget-title{
-    background:#f7f7f7;
+
+.author{
+    color:#777;
+    font-size:10px;
+    margin-bottom:10px;
+}
+
+.rating{
+    color:#f2b01e;
+    font-size:12px;
+    margin-bottom:12px;
+}
+
+.rating-number{
+    color:#aaa;
+    margin-left:5px;
+}
+
+.chapter-line{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border-bottom:1px solid #292929;
+    padding:7px 0;
+    max-width:430px;
+}
+
+.chapter-line a{
+    color:#bbb;
+    font-size:10px;
+}
+
+.chapter-line a:hover{
+    color:#eb3349;
+}
+
+.volume{
+    color:#666;
+    font-size:9px;
+    margin-left:7px;
+}
+
+.date{
+    color:#666;
+    font-size:9px;
+}
+
+.load-more{
+    display:block;
+    text-align:center;
+    border:1px solid #3a3a3a;
+    padding:11px;
+    color:#aaa;
+    text-transform:uppercase;
+    font-size:10px;
+    margin-top:25px;
+}
+
+.load-more:hover{
+    background:#eb3349;
+    border-color:#eb3349;
+    color:white;
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar-box{
+    border:1px solid #303030;
+}
+
+.sidebar-title{
+    background:#222;
     border-bottom:2px solid #eb3349;
-    padding:14px 16px;
-    color:#333;
+    color:#eee;
     font-size:14px;
     font-weight:bold;
     text-transform:uppercase;
+    padding:14px 15px;
 }
+
 .genres li{
     list-style:none;
-    border-bottom:1px solid #eee;
+    border-bottom:1px solid #292929;
 }
+
 .genres a{
     display:flex;
     justify-content:space-between;
-    padding:10px 15px;
-    font-size:12px;
-    color:#777;
+    padding:9px 14px;
+    color:#888;
+    font-size:11px;
 }
-.genres a:hover{color:#eb3349}
-.count{color:#bbb}
 
-/* FOOTER */
+.genres a:hover{
+    color:#eb3349;
+}
+
+.genre-count{
+    color:#555;
+}
+
+/* ================= FOOTER ================= */
+
 .footer{
-    margin-top:30px;
-    background:#222;
-    color:#999;
+    margin-top:60px;
+    background:#111;
+    border-top:1px solid #292929;
     padding:40px 0;
 }
+
 .footer-inner{
     display:flex;
     justify-content:space-between;
     align-items:center;
 }
-.footer .logo{color:#fff;margin:0}
-.footer p{font-size:11px}
 
-/* MOBILE */
-@media(max-width:900px){
-    .menu{display:none}
-    .logo{margin-right:auto}
-    .hero-cover{margin-left:20px;width:190px}
-    .hero-text{padding-left:25px}
-    .popular{grid-template-columns:repeat(3,1fr)}
-    .main-content{grid-template-columns:1fr}
+.footer-logo{
+    color:#fff;
+    font-size:24px;
+    font-weight:bold;
 }
+
+.footer-logo span{
+    color:#eb3349;
+}
+
+.footer-text{
+    color:#666;
+    font-size:10px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+    .menu{
+        display:none;
+    }
+
+    .logo{
+        margin-right:auto;
+    }
+
+    .popular{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .main{
+        grid-template-columns:1fr;
+    }
+}
+
 @media(max-width:600px){
-    .hero{height:430px}
-    .hero-cover{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:.3}
-    .hero-text{position:relative;padding:30px}
-    .hero h1{font-size:34px}
-    .popular{grid-template-columns:repeat(2,1fr);gap:15px}
-    .card-cover{height:230px}
-    .footer-inner{display:block}
-    .footer p{margin-top:15px}
+
+    .hero{
+        height:430px;
+    }
+
+    .hero-cover{
+        position:absolute;
+        inset:0;
+        width:100%;
+        height:100%;
+        margin:0;
+        opacity:.35;
+    }
+
+    .hero-info{
+        position:relative;
+        padding:30px;
+    }
+
+    .hero-title{
+        font-size:32px;
+    }
+
+    .popular{
+        grid-template-columns:repeat(2,1fr);
+        gap:15px;
+    }
+
+    .popular-cover{
+        height:220px;
+    }
+
+    .manga-cover{
+        width:90px;
+        height:125px;
+    }
+
+    .manga-item{
+        min-height:125px;
+    }
+
+    .manga-info{
+        padding-left:13px;
+    }
+
+    .chapter-line{
+        max-width:none;
+    }
 }
 </style>
 </head>
 
 <body>
+
+<!-- HEADER -->
 
 <header class="header">
 <div class="container header-inner">
@@ -294,179 +599,204 @@ a{text-decoration:none;color:inherit}
         <a href="#">Manga</a>
         <a href="#">Novel</a>
         <a href="#">Blog</a>
-        <a href="#">Contact</a>
+        <a href="#">About Us</a>
+        <a href="#">Shop</a>
     </nav>
 
-    <div class="header-search">⌕</div>
+    <div class="header-right">
+        <div class="search-icon">⌕</div>
+        <a href="#" class="sign">Sign In</a>
+    </div>
 
 </div>
 </header>
 
 
-<section class="container hero">
+<!-- CATEGORY -->
 
-<div class="hero-bg"></div>
+<div class="category">
+<div class="container category-inner">
 
-<div class="hero-content">
+    <a href="#">Romance</a>
+    <a href="#">Comedy</a>
+    <a href="#">Shoujo</a>
+    <a href="#">Drama</a>
+    <a href="#">School Life</a>
+    <a href="#">Action</a>
+    <a href="#">Fantasy</a>
+    <a href="#">Yaoi</a>
+    <a href="#">More</a>
 
-    <div class="hero-cover"></div>
+</div>
+</div>
 
-    <div class="hero-text">
 
-        <div class="hero-label">Featured Series</div>
+<main class="container">
 
-        <h1>Shut Line</h1>
+<!-- HERO -->
 
-        <div class="hero-meta">
-            Drama &nbsp; • &nbsp; Romance &nbsp; • &nbsp; Yaoi
+<section class="hero">
+
+    <div class="hero-background"></div>
+
+    <div class="hero-content">
+
+        <div class="hero-cover"></div>
+
+        <div class="hero-info">
+
+            <div class="hero-label">
+                Featured Manga
+            </div>
+
+            <h1 class="hero-title">
+                Shut Line
+            </h1>
+
+            <div class="hero-meta">
+                Drama &nbsp; • &nbsp;
+                Romance &nbsp; • &nbsp;
+                Yaoi
+            </div>
+
+            <p class="hero-description">
+                Discover the latest manga and webtoon releases.
+                Follow your favorite series and read new chapters
+                as soon as they are released.
+            </p>
+
+            <a href="#" class="read-btn">
+                Read Now
+            </a>
+
         </div>
-
-        <p>
-            Favori manga ve webtoon serilerini keşfet.
-            Güncel bölümleri takip et ve okumaya hemen başla.
-        </p>
-
-        <a href="#" class="btn">Read Now</a>
 
     </div>
 
-</div>
 </section>
 
 
-<section class="container section">
+<!-- POPULAR SERIES -->
 
-<div class="title">
+<section class="section">
+
+<div class="section-title">
     <h2>Popular Series</h2>
 </div>
 
 <div class="popular">
 
-    <div class="card">
-        <div class="card-cover cover1">
-            <div class="cover-word">JINX</div>
+    <div class="popular-card">
+        <div class="popular-cover one">
+            <div class="cover-name">JINX</div>
         </div>
-        <h3>Jinx</h3>
-        <div class="card-info">Chapter 84</div>
+        <div class="popular-title">Jinx</div>
+        <div class="popular-date">Today</div>
+        <div class="chapter-row">
+            <a href="#">Chapter 84</a>
+            <a href="#">Chapter 83</a>
+        </div>
     </div>
 
-    <div class="card">
-        <div class="card-cover cover2">
-            <div class="cover-word">SHUT LINE</div>
+    <div class="popular-card">
+        <div class="popular-cover two">
+            <div class="cover-name">SHUT LINE</div>
         </div>
-        <h3>Shut Line</h3>
-        <div class="card-info">Chapter 94</div>
+        <div class="popular-title">Shut Line</div>
+        <div class="popular-date">Today</div>
+        <div class="chapter-row">
+            <a href="#">Chapter 94</a>
+            <a href="#">Chapter 93</a>
+        </div>
     </div>
 
-    <div class="card">
-        <div class="card-cover cover3">
-            <div class="cover-word">PAINTER OF THE NIGHT</div>
+    <div class="popular-card">
+        <div class="popular-cover three">
+            <div class="cover-name">PAINTER</div>
         </div>
-        <h3>Painter of the Night</h3>
-        <div class="card-info">Chapter 129</div>
+        <div class="popular-title">Painter of the Night</div>
+        <div class="popular-date">Yesterday</div>
+        <div class="chapter-row">
+            <a href="#">Chapter 129</a>
+            <a href="#">Chapter 128</a>
+        </div>
     </div>
 
-    <div class="card">
-        <div class="card-cover cover4">
-            <div class="cover-word">SEMANTIC ERROR</div>
+    <div class="popular-card">
+        <div class="popular-cover four">
+            <div class="cover-name">SEMANTIC</div>
         </div>
-        <h3>Semantic Error</h3>
-        <div class="card-info">Chapter 88</div>
+        <div class="popular-title">Semantic Error</div>
+        <div class="popular-date">2 days ago</div>
+        <div class="chapter-row">
+            <a href="#">Chapter 88</a>
+            <a href="#">Chapter 87</a>
+        </div>
     </div>
 
-    <div class="card">
-        <div class="card-cover cover5">
-            <div class="cover-word">LOVE HISTORY</div>
+    <div class="popular-card">
+        <div class="popular-cover five">
+            <div class="cover-name">LOVE</div>
         </div>
-        <h3>Love History</h3>
-        <div class="card-info">Chapter 61</div>
+        <div class="popular-title">Love History</div>
+        <div class="popular-date">3 days ago</div>
+        <div class="chapter-row">
+            <a href="#">Chapter 61</a>
+            <a href="#">Chapter 60</a>
+        </div>
     </div>
 
 </div>
+
 </section>
 
 
-<section class="container section">
+<!-- LATEST -->
 
-<div class="main-content">
+<section class="section">
+
+<div class="main">
 
 <div>
 
-    <div class="title">
-        <h2>Latest Manga Updates</h2>
+<div class="section-title">
+    <h2>Latest Manga Releases</h2>
+</div>
+
+
+<!-- MANGA 1 -->
+
+<div class="manga-item">
+
+    <div class="manga-cover one">
+        <span class="badge">New</span>
     </div>
 
-    <div class="latest-item">
+    <div class="manga-info">
 
-        <div class="latest-cover cover1"></div>
-
-        <div class="latest-info">
-
-            <h3>Jinx</h3>
-
-            <div class="latest-author">
-                Author: Mingwa
-            </div>
-
-            <div class="chapter">
-                <a href="#">Chapter 84</a>
-                <span class="chapter-date">Today</span>
-            </div>
-
-            <div class="chapter">
-                <a href="#">Chapter 83</a>
-                <span class="chapter-date">3 days ago</span>
-            </div>
-
+        <div class="manga-name">
+            Jinx
         </div>
 
-    </div>
-
-
-    <div class="latest-item">
-
-        <div class="latest-cover cover2"></div>
-
-        <div class="latest-info">
-
-            <h3>Shut Line</h3>
-
-            <div class="latest-author">
-                Author: Kyou
-            </div>
-
-            <div class="chapter">
-                <a href="#">Chapter 94</a>
-                <span class="chapter-date">Today</span>
-            </div>
-
-            <div class="chapter">
-                <a href="#">Chapter 93</a>
-                <span class="chapter-date">2 days ago</span>
-            </div>
-
+        <div class="author">
+            Mingwa
         </div>
 
-    </div>
+        <div class="rating">
+            ★★★★★
+            <span class="rating-number">4.8</span>
+        </div>
 
+        <div class="chapter-line">
+            <a href="#">Chapter 84</a>
+            <span class="volume">Vol. 4</span>
+            <span class="date">Today</span>
+        </div>
 
-    <div class="latest-item">
-
-        <div class="latest-cover cover3"></div>
-
-        <div class="latest-info">
-
-            <h3>Painter of the Night</h3>
-
-            <div class="latest-author">
-                Author: Byeonduck
-            </div>
-
-            <div class="chapter">
-                <a href="#">Chapter 129</a>
-                <span class="chapter-date">Yesterday</span>
-            </div>
-
+        <div class="chapter-line">
+            <a href="#">Chapter 83</a>
+            <span class="volume">Vol. 4</span>
+            <span class="date">3 days ago</span>
         </div>
 
     </div>
@@ -474,25 +804,211 @@ a{text-decoration:none;color:inherit}
 </div>
 
 
+<!-- MANGA 2 -->
+
+<div class="manga-item">
+
+    <div class="manga-cover two">
+        <span class="badge hot">Hot</span>
+    </div>
+
+    <div class="manga-info">
+
+        <div class="manga-name">
+            Shut Line
+        </div>
+
+        <div class="author">
+            Kyou
+        </div>
+
+        <div class="rating">
+            ★★★★★
+            <span class="rating-number">4.7</span>
+        </div>
+
+        <div class="chapter-line">
+            <a href="#">Chapter 94</a>
+            <span class="volume">Vol. 5</span>
+            <span class="date">Today</span>
+        </div>
+
+        <div class="chapter-line">
+            <a href="#">Chapter 93</a>
+            <span class="volume">Vol. 5</span>
+            <span class="date">2 days ago</span>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- MANGA 3 -->
+
+<div class="manga-item">
+
+    <div class="manga-cover three"></div>
+
+    <div class="manga-info">
+
+        <div class="manga-name">
+            Painter of the Night
+        </div>
+
+        <div class="author">
+            Byeonduck
+        </div>
+
+        <div class="rating">
+            ★★★★★
+            <span class="rating-number">4.9</span>
+        </div>
+
+        <div class="chapter-line">
+            <a href="#">Chapter 129</a>
+            <span class="volume">Vol. 6</span>
+            <span class="date">Yesterday</span>
+        </div>
+
+        <div class="chapter-line">
+            <a href="#">Chapter 128</a>
+            <span class="volume">Vol. 6</span>
+            <span class="date">5 days ago</span>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- MANGA 4 -->
+
+<div class="manga-item">
+
+    <div class="manga-cover four">
+        <span class="badge">New</span>
+    </div>
+
+    <div class="manga-info">
+
+        <div class="manga-name">
+            Semantic Error
+        </div>
+
+        <div class="author">
+            Jeosuri
+        </div>
+
+        <div class="rating">
+            ★★★★★
+            <span class="rating-number">4.6</span>
+        </div>
+
+        <div class="chapter-line">
+            <a href="#">Chapter 88</a>
+            <span class="volume">Vol. 3</span>
+            <span class="date">2 days ago</span>
+        </div>
+
+        <div class="chapter-line">
+            <a href="#">Chapter 87</a>
+            <span class="volume">Vol. 3</span>
+            <span class="date">1 week ago</span>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- MANGA 5 -->
+
+<div class="manga-item">
+
+    <div class="manga-cover five">
+        <span class="badge adult">18+</span>
+    </div>
+
+    <div class="manga-info">
+
+        <div class="manga-name">
+            Love History
+        </div>
+
+        <div class="author">
+            Various
+        </div>
+
+        <div class="rating">
+            ★★★★★
+            <span class="rating-number">4.5</span>
+        </div>
+
+        <div class="chapter-line">
+            <a href="#">Chapter 61</a>
+            <span class="volume">Vol. 2</span>
+            <span class="date">3 days ago</span>
+        </div>
+
+        <div class="chapter-line">
+            <a href="#">Chapter 60</a>
+            <span class="volume">Vol. 2</span>
+            <span class="date">1 week ago</span>
+        </div>
+
+    </div>
+
+</div>
+
+
+<a href="#" class="load-more">
+    Load More
+</a>
+
+</div>
+
+
+<!-- SIDEBAR -->
+
 <aside>
 
-<div class="sidebar-widget">
+<div class="sidebar-box">
 
-    <div class="widget-title">
+    <div class="sidebar-title">
         All Genres
     </div>
 
     <ul class="genres">
 
-        <li><a href="#">Action <span class="count">24</span></a></li>
-        <li><a href="#">Adventure <span class="count">18</span></a></li>
-        <li><a href="#">Comedy <span class="count">31</span></a></li>
-        <li><a href="#">Drama <span class="count">42</span></a></li>
-        <li><a href="#">Fantasy <span class="count">27</span></a></li>
-        <li><a href="#">Romance <span class="count">55</span></a></li>
-        <li><a href="#">Shoujo <span class="count">22</span></a></li>
-        <li><a href="#">Shounen <span class="count">17</span></a></li>
-        <li><a href="#">Yaoi <span class="count">29</span></a></li>
+        <li><a href="#">Action <span class="genre-count">12</span></a></li>
+        <li><a href="#">Adult <span class="genre-count">6</span></a></li>
+        <li><a href="#">Adventure <span class="genre-count">10</span></a></li>
+        <li><a href="#">Comedy <span class="genre-count">13</span></a></li>
+        <li><a href="#">Drama <span class="genre-count">6</span></a></li>
+        <li><a href="#">Ecchi <span class="genre-count">7</span></a></li>
+        <li><a href="#">Fantasy <span class="genre-count">8</span></a></li>
+        <li><a href="#">Harem <span class="genre-count">11</span></a></li>
+        <li><a href="#">Historical <span class="genre-count">9</span></a></li>
+        <li><a href="#">Horror <span class="genre-count">11</span></a></li>
+        <li><a href="#">Josei <span class="genre-count">10</span></a></li>
+        <li><a href="#">Manga <span class="genre-count">7</span></a></li>
+        <li><a href="#">Manhua <span class="genre-count">4</span></a></li>
+        <li><a href="#">Manhwa <span class="genre-count">5</span></a></li>
+        <li><a href="#">Mature <span class="genre-count">10</span></a></li>
+        <li><a href="#">Mystery <span class="genre-count">8</span></a></li>
+        <li><a href="#">Romance <span class="genre-count">8</span></a></li>
+        <li><a href="#">School Life <span class="genre-count">8</span></a></li>
+        <li><a href="#">Sci-fi <span class="genre-count">11</span></a></li>
+        <li><a href="#">Seinen <span class="genre-count">11</span></a></li>
+        <li><a href="#">Shoujo <span class="genre-count">10</span></a></li>
+        <li><a href="#">Shounen <span class="genre-count">11</span></a></li>
+        <li><a href="#">Slice of Life <span class="genre-count">7</span></a></li>
+        <li><a href="#">Sports <span class="genre-count">10</span></a></li>
+        <li><a href="#">Supernatural <span class="genre-count">10</span></a></li>
+        <li><a href="#">Tragedy <span class="genre-count">12</span></a></li>
+        <li><a href="#">Webtoon <span class="genre-count">9</span></a></li>
+        <li><a href="#">Yaoi <span class="genre-count">12</span></a></li>
 
     </ul>
 
@@ -501,21 +1017,31 @@ a{text-decoration:none;color:inherit}
 </aside>
 
 </div>
+
 </section>
 
+</main>
+
+
+<!-- FOOTER -->
 
 <footer class="footer">
 
 <div class="container footer-inner">
 
     <div>
-        <div class="logo">
+        <div class="footer-logo">
             MY<span>MANGA</span>
         </div>
-        <p>© 2026 MyManga</p>
+
+        <div class="footer-text">
+            Manga & Webtoon Reading Platform
+        </div>
     </div>
 
-    <p>Manga & Webtoon Reading Platform</p>
+    <div class="footer-text">
+        © 2026 MyManga
+    </div>
 
 </div>
 
